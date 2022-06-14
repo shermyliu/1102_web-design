@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap');
+
+body {
+    font-family: 'Noto Serif TC', serif;
+    background: rgb(255, 247, 238);
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.container {
+    min-height: 300px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(60px, 120px) auto;
+    grid-template-rows: auto auto;
+}
+
+@media (min-width: 300px) {
+    .container {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "advert header"
+            "advert content"
+            "advert footer";
+    }
+}
+
+@media (min-width: 400px) {
+    .container {
+        grid-template-areas:
+            "advert header"
+            "advert article"
+            "advert footer";
+    }
+}
+
+article {
+    grid-area: 1/2/2/3;
+    display: grid;
+    grid-template-rows: repeat(8, 100vh);
+}
+
+article header {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: minmax(2em, 3em) 1fr 1fr 3fr minmax(2em, 3em);
+}
+
+article header h1 {
+    font-size: 2.5em;
+    grid-area: 2/2/4/9;
+}
+
+article header h2 {
+    font-size: 1em;
+    font-weight: 400;
+    grid-area: 3/2/4/4;
+}
+
+article header p {
+    grid-area: 4/2/5/10;
+}
+
+article header img {
+    grid-area: 2/9/3/12;
+}
+
+article section {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 2em repeat(10, 1fr) 2em;
+    grid-gap: 16px;
+}
+
+article section h1 {
+    grid-area: 2/2/3/8;
+}
+
+article section p {
+    grid-area: 3/2/10/8;
+}
+
+.p2 {
+    grid-area: 7/2/12/8;
+}
+
+.img4 {
+    grid-area: 5/8/8/13;
+}
+
+article section img {
+    grid-area: 8/7/12/12;
+}
+
+.decobox2 {
+    grid-area: 5/10/10/13;
+    background-color: #faa3a4;
+}
+
+.decobox3 {
+    grid-area: 9/6/13/11;
+    background-color: #546d67;
+}
+
+.decobox4 {
+    grid-area: 4/10/12/12;
+    background-color: gainsboro;
+}
+
+.decobox5 {
+    grid-area: 4/11/10/13;
+    background-color: bisque;
+}
+
+.cta {
+    background-image: url('https://source.unsplash.com/4VDRCoNuvE0');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.calling {
+    grid-area: 2/4/3/10;
+    font-size: 3em;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.libcode {
+    grid-area: 9/5/10/9;
+    color: #ffffff;
+    text-align: center;
+}
+
+.button {
+    grid-area: 7/6/8/8;
+    background-color: antiquewhite;
+    padding: 0.5em;
+    border-radius: 16px;
+    box-shadow: 0px 4px 4px black;
+    font-size: 1em;
+    text-align: center;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.gallery {
+    background: #EEE;
+}
+
+.gallery-cell {
+    width: 80%;
+    height: 80vh;
+    margin-right: 12px;
+    counter-increment: gallery-cell;
+}
+
+.carousel-title {
+    font-size: 1.5em;
+    font-weight: 700;
+    text-align: center;
+    padding: 16px;
+}
+
+nav {
+    grid-area: 1/1/2/2;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav a {
+    color: hsl(31, 27%, 33%);
+    font-size: 1.2em;
+    line-height: 2em;
+}
+
+nav a:hover {
+    color: black;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+    margin-left: 160px;
+    /* Same as the width of the sidebar */
+    padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+footer {
+    background: darkgoldenrod;
+    color: #ffffff;
+    grid-area: 2/2/3/3;
+    padding: 16px;
+}
